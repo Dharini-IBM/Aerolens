@@ -199,10 +199,10 @@ const [liveStats, setLiveStats] = useState(stats);
 
         </Toolbar>
       </AppBar>
-
+ <Box p={3}>{children}</Box>
       {/* Show dashboard content only on the Dashboard tab */}
       {tabIndex === 0 && (
-        <Box p={3}>
+        <Box p={3}  sx={{ marginTop:'-60px'}}>
           <Box
   sx={{
     width: '100%',
