@@ -29,6 +29,7 @@ const pages = [
   { label: 'Municipal Services', path: '/maintenance' }
 ];
 
+
 const stats = [
   {
     title: "Active Drones",
@@ -144,6 +145,27 @@ const DashboardLayout = ({ children }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [tabIndex, setTabIndex] = useState(0);
+const [liveStats, setLiveStats] = useState(stats);
+
+  useEffect(() => {
+  const interval = setInterval(() => {
+    setLiveStats(prev =>
+      prev.map(stat => {
+        if (typeof stat.value === 'number') {
+          const change = Math.floor(Math.random() * 10 - 5); // -5 to +4
+          return {
+            ...stat,
+            value: Math.max(0, stat.value + change),
+            trend: `${change >= 0 ? '+' : ''}${change}%`
+          };
+        }
+        return stat; // skip strings like '74%'
+      })
+    );
+  }, 5000); // every 5s
+
+  return () => clearInterval(interval);
+}, []);
 
   useEffect(() => {
     const currentPage = pages.findIndex(p => location.pathname.startsWith(p.path));
@@ -161,9 +183,7 @@ const DashboardLayout = ({ children }) => {
     <Box>
       <AppBar position="static">
         <Toolbar sx={{ flexDirection: 'column', alignItems: 'flex-start' }}>
-          <Typography variant="h6" sx={{ flexGrow: 1, mb: 1 }}>
-            AI Drone Dashboard
-          </Typography>
+  
           <Tabs
             value={tabIndex}
             onChange={handleChange}
@@ -175,6 +195,8 @@ const DashboardLayout = ({ children }) => {
               <Tab key={index} label={page.label} />
             ))}
           </Tabs>
+
+
         </Toolbar>
       </AppBar>
        <Box p={3}>{children}</Box>
@@ -182,17 +204,75 @@ const DashboardLayout = ({ children }) => {
       {/* Show dashboard content only on the Dashboard tab */}
       {tabIndex === 0 && (
         <Box p={3}>
-          <Typography variant="h4" fontWeight="bold" gutterBottom>
-            Real-Time Operations Dashboard
-          </Typography>
-          <Typography variant="subtitle1" color="textSecondary" gutterBottom>
-            Monitor autonomous drone operations and AI-powered pothole detection
-          </Typography>
+          <Box
+  sx={{
+    width: '100%',
+    background: 'linear-gradient(90deg, #2196f3, #1e88e5)',
+    color: 'white',
+    textAlign: 'center',
+    py: 6,
+    px: 2,
+    mt: 2,
+    borderRadius: 2
+  }}
+>
+  <Typography variant="h4" fontWeight="bold" gutterBottom>
+    Real-Time Operations Dashboard
+  </Typography>
+  <Typography variant="subtitle1" gutterBottom>
+    Monitor autonomous drone operations and AI-powered pothole detection
+  </Typography>
+
+  <Grid
+    container
+    spacing={3}
+    justifyContent="center"
+    sx={{ mt: 3 }}
+  >
+    <Grid item xs={12} sm={6} md={4} lg={2.5}>
+      <Box
+        sx={{
+          backgroundColor: 'rgba(255, 255, 255, 0.1)',
+          borderRadius: 2,
+          py: 2,
+        }}
+      >
+        <Typography variant="h5" fontWeight="bold">1214</Typography>
+        <Typography variant="body2">Potholes Detected Today</Typography>
+      </Box>
+    </Grid>
+    <Grid item xs={12} sm={6} md={4} lg={2.5}>
+      <Box
+        sx={{
+          backgroundColor: 'rgba(255, 255, 255, 0.1)',
+          borderRadius: 2,
+          py: 2,
+        }}
+      >
+        <Typography variant="h5" fontWeight="bold">24</Typography>
+        <Typography variant="body2">Active Drones</Typography>
+      </Box>
+    </Grid>
+    <Grid item xs={12} sm={6} md={4} lg={2.5}>
+      <Box
+        sx={{
+          backgroundColor: 'rgba(255, 255, 255, 0.1)',
+          borderRadius: 2,
+          py: 2,
+        }}
+      >
+        <Typography variant="h5" fontWeight="bold">91%</Typography>
+        <Typography variant="body2">Repair Efficiency</Typography>
+      </Box>
+    </Grid>
+  </Grid>
+</Box>
+
 
           <Grid container spacing={3} mt={1}>
-            {stats.map((stat, index) => (
+            {liveStats.map((stat, index) => (
               <Grid item xs={12} sm={6} md={3} key={index}>
-                <Card elevation={3} sx={{ borderRadius: 3 }}>
+                <Card elevation={3} sx={{ borderRadius: 3 ,width:'22vw' ,height:'17vh'}}>
                   <CardContent>
                     <Box display="flex" justifyContent="space-between" alignItems="center" mb={1}>
                       <Typography variant="subtitle2" color="textSecondary">{stat.title}</Typography>
@@ -216,8 +296,8 @@ const DashboardLayout = ({ children }) => {
           <LiveMap />
 
           <Grid container spacing={3} mt={4}>
-            <Grid item xs={12} md={6}>
-              <Card elevation={3} sx={{ borderRadius: 3 }}>
+            <Grid item xs={12} md={6} lg={6}>
+              <Card elevation={3} sx={{ borderRadius: 3,width:'47vw' }}>
                 <CardContent>
                   <Typography variant="h6" fontWeight="bold" gutterBottom>
                     Recent Detections
@@ -229,8 +309,8 @@ const DashboardLayout = ({ children }) => {
               </Card>
             </Grid>
 
-            <Grid item xs={12} md={6}>
-              <Card elevation={3} sx={{ borderRadius: 3 }}>
+            <Grid item xs={12} md={6} lg={6}>
+              <Card elevation={3} sx={{ borderRadius: 3,width:'47vw' }}>
                 <CardContent>
                   <Typography variant="h6" fontWeight="bold" gutterBottom>
                     Detection Accuracy
