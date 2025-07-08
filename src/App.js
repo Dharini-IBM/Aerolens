@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
-function App() {
+import DashboardLayout from './components/DashboardLayout';
+import Dashboard from './pages/Dashboard';
+import Traffic from './pages/Traffic';
+import Maintenance from './pages/Maintenance';
+
+import PotholeDetection from './components/PotholeDetection';
+import ParkingViolation from './components/ParkingViolation';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <DashboardLayout>
+        <Routes>
+          <Route path="/" element={<Navigate to="/dashboard" replace />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/potholes" element={<PotholeDetection />} />
+          <Route path="/violations" element={<ParkingViolation />} />
+          <Route path="/traffic" element={<Traffic />} />
+          <Route path="/maintenance" element={<Maintenance />} />
+        </Routes>
+      </DashboardLayout>
+    </Router>
   );
-}
+};
 
 export default App;
