@@ -180,7 +180,7 @@ const [liveStats, setLiveStats] = useState(stats);
   };
 
   return (
-    <Box>
+    <Box   >
       <AppBar position="static">
         <Toolbar sx={{ flexDirection: 'column', alignItems: 'flex-start' }}>
   
@@ -199,7 +199,6 @@ const [liveStats, setLiveStats] = useState(stats);
 
         </Toolbar>
       </AppBar>
-       <Box p={3}>{children}</Box>
 
       {/* Show dashboard content only on the Dashboard tab */}
       {tabIndex === 0 && (
@@ -213,6 +212,8 @@ const [liveStats, setLiveStats] = useState(stats);
     py: 6,
     px: 2,
     mt: 2,
+    mb:3,
+    ml:-2,
     borderRadius: 2
   }}
 >
@@ -230,11 +231,12 @@ const [liveStats, setLiveStats] = useState(stats);
     sx={{ mt: 3 }}
   >
     <Grid item xs={12} sm={6} md={4} lg={2.5}>
-      <Box
+      <Box 
         sx={{
           backgroundColor: 'rgba(255, 255, 255, 0.1)',
           borderRadius: 2,
           py: 2,
+          
         }}
       >
         <Typography variant="h5" fontWeight="bold">1214</Typography>
@@ -272,7 +274,7 @@ const [liveStats, setLiveStats] = useState(stats);
           <Grid container spacing={3} mt={1}>
             {liveStats.map((stat, index) => (
               <Grid item xs={12} sm={6} md={3} key={index}>
-                <Card elevation={3} sx={{ borderRadius: 3 ,width:'22vw' ,height:'17vh'}}>
+                <Card elevation={6} sx={{ borderRadius: 3 ,width:'22vw' ,height:'17vh'}}>
                   <CardContent>
                     <Box display="flex" justifyContent="space-between" alignItems="center" mb={1}>
                       <Typography variant="subtitle2" color="textSecondary">{stat.title}</Typography>
