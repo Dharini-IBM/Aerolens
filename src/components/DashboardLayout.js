@@ -236,11 +236,13 @@ const [liveStats, setLiveStats] = useState(stats);
           backgroundColor: 'rgba(255, 255, 255, 0.1)',
           borderRadius: 2,
           py: 2,
+          pr: 4,
+          pl:4,
           
         }}
       >
-        <Typography variant="h5" fontWeight="bold">1214</Typography>
-        <Typography variant="body2">Potholes Detected Today</Typography>
+        <Typography variant="h5" fontWeight="bold">89</Typography>
+        <Typography variant="body2">Potholes Detected Yesterday</Typography>
       </Box>
     </Grid>
     <Grid item xs={12} sm={6} md={4} lg={2.5}>
@@ -249,10 +251,12 @@ const [liveStats, setLiveStats] = useState(stats);
           backgroundColor: 'rgba(255, 255, 255, 0.1)',
           borderRadius: 2,
           py: 2,
+          pr: 4,
+          pl: 4,
         }}
       >
-        <Typography variant="h5" fontWeight="bold">24</Typography>
-        <Typography variant="body2">Active Drones</Typography>
+        <Typography variant="h5" fontWeight="bold">48</Typography>
+        <Typography variant="body2">Total Drones</Typography>
       </Box>
     </Grid>
     <Grid item xs={12} sm={6} md={4} lg={2.5}>
@@ -261,6 +265,8 @@ const [liveStats, setLiveStats] = useState(stats);
           backgroundColor: 'rgba(255, 255, 255, 0.1)',
           borderRadius: 2,
           py: 2,
+          pr: 4,
+          pl:4,
         }}
       >
         <Typography variant="h5" fontWeight="bold">91%</Typography>
