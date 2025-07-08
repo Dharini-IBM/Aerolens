@@ -2,7 +2,7 @@
   "name": "FlowPatrol",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Dharini-IBM.github.io/FlowPatrol",
+  "homepage": "https://ramya-db.github.io/FlowPatrol",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
