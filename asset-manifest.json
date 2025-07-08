@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Dharini-IBM/FlowPatrol/static/css/main.323d7611.css",
-    "main.js": "/Dharini-IBM/FlowPatrol/static/js/main.a4cec781.js",
-    "static/js/453.26cea773.chunk.js": "/Dharini-IBM/FlowPatrol/static/js/453.26cea773.chunk.js",
-    "static/media/axios.cjs": "/Dharini-IBM/FlowPatrol/static/media/axios.bd91d4005236f3ccd56e.cjs",
-    "index.html": "/Dharini-IBM/FlowPatrol/index.html",
-    "main.323d7611.css.map": "/Dharini-IBM/FlowPatrol/static/css/main.323d7611.css.map",
-    "main.a4cec781.js.map": "/Dharini-IBM/FlowPatrol/static/js/main.a4cec781.js.map",
-    "453.26cea773.chunk.js.map": "/Dharini-IBM/FlowPatrol/static/js/453.26cea773.chunk.js.map"
+    "main.css": "/FlowPatrol/static/css/main.323d7611.css",
+    "main.js": "/FlowPatrol/static/js/main.4650674c.js",
+    "static/js/453.26cea773.chunk.js": "/FlowPatrol/static/js/453.26cea773.chunk.js",
+    "static/media/axios.cjs": "/FlowPatrol/static/media/axios.bd91d4005236f3ccd56e.cjs",
+    "index.html": "/FlowPatrol/index.html",
+    "main.323d7611.css.map": "/FlowPatrol/static/css/main.323d7611.css.map",
+    "main.4650674c.js.map": "/FlowPatrol/static/js/main.4650674c.js.map",
+    "453.26cea773.chunk.js.map": "/FlowPatrol/static/js/453.26cea773.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.323d7611.css",
-    "static/js/main.a4cec781.js"
+    "static/js/main.4650674c.js"
   ]
 }
