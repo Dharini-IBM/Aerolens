@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Drone Manufacturing Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Drone Manufacturing Dashboard</h1>
+    <div class="top-right">
+      <span id="clock">--:--</span>
+      <button class="emergency">EMERGENCY STOP</button>
+    </div>
+    <nav>
+      <a href="catalog.html">Part Catalog & Documentation</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="production">
+      <h2>Production Line</h2>
+      <div class="progress-container" id="assembly">
+        <span>Assembly</span><div class="bar"><div class="fill" style="width: 20%;"></div></div>
+      </div>
+      <div class="progress-container" id="calibration">
+        <span>Calibration</span><div class="bar"><div class="fill" style="width: 10%;"></div></div>
+      </div>
+      <div class="progress-container" id="packaging">
+        <span>Packaging</span><div class="bar"><div class="fill" style="width: 50%;"></div></div>
+      </div>
+    </section>
+
+    <section class="data-panels">
+      <div class="telemetry">
+        <h2>Telemetry</h2>
+        <div class="tile">🔋 Battery: <span id="battery">72%</span></div>
+        <div class="tile">🌡️ Temp: <span id="temperature">58°C</span></div>
+        <div class="tile">📶 WiFi: Connected</div>
+        <div class="tile">📍 Location: <span id="location">14.8 (X,Y,Z)</span></div>
+      </div>
+
+      <div class="sensors">
+        <h2>Sensor Status</h2>
+        <ul id="sensor-list">
+          <li>IMU: <span class="ok">OK</span></li>
+          <li>Gyroscope: <span class="ok">OK</span></li>
+          <li>Accelerometer: <span class="ok">OK</span></li>
+          <li>Compass: <span class="fault">FAULT</span></li>
+        </ul>
+      </div>
+
+      <div class="alerts">
+        <h2>Alerts</h2>
+        <div class="alert">
+          ⚠️ Gyroscope drift detected
+        </div>
+      </div>
+    </section>
+
+    <section class="queue">
+      <h2>Print Queue</h2>
+      <table>
+        <thead>
+          <tr><th>Drone ID</th><th>Status</th></tr>
+        </thead>
+        <tbody id="queue-body">
+          <tr><td>0018</td><td class="pending">Pending</td></tr>
+          <tr><td>0017</td><td>Printing</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

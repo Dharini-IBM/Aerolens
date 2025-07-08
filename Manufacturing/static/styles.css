@@ -1,0 +1,141 @@
+body {
+    font-family: sans-serif;
+    background-color: #121212;
+    color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #1e1e1e;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .top-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .emergency {
+    background-color: #c0392b;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  main {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  section.production {
+    grid-column: span 2;
+  }
+  
+  .data-panels {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  .data-panels > div {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  
+  .queue {
+    /* Default: occupies the second column */
+    grid-column: 2;
+    align-self: start;
+  }
+  
+  @media (max-width: 900px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+    .data-panels {
+        flex-direction: column;
+    }
+    .queue {
+        grid-column: 1;
+    }
+  }
+  
+  .progress-container {
+    margin-bottom: 10px;
+  }
+  
+  .bar {
+    width: 100%;
+    height: 20px;
+    background-color: #333;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .fill {
+    height: 100%;
+    background-color: orange;
+    width: 0%;
+    transition: width 0.5s ease-in-out;
+  }
+  
+  .data-panels {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .telemetry .tile, .alerts .alert {
+    background-color: #1e1e1e;
+    padding: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .sensors ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sensors li {
+    padding: 5px 0;
+  }
+  
+  .ok {
+    color: lightgreen;
+  }
+  
+  .fault {
+    color: orange;
+  }
+  
+  .pending {
+    color: orange;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+  }
+
+  a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  

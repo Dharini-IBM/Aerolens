@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Part Catalog & Documentation</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .catalog-table { width: 100%; border-collapse: collapse; margin-bottom: 2em; }
+    .catalog-table th, .catalog-table td { padding: 8px 12px; border-bottom: 1px solid #333; }
+    .spec-sheet { background: #1e1e1e; padding: 1em; margin-bottom: 2em; border-radius: 6px; }
+    .back-link { color: orange; text-decoration: none; margin-bottom: 1em; display: inline-block; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Part Catalog & Documentation</h1>
+    <a class="back-link" href="index.html">← Back to Dashboard</a>
+  </header>
+  <main>
+    <section>
+      <h2>Parts List</h2>
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Part #</th>
+            <th>Name</th>
+            <th>STL File</th>
+            <th>Material</th>
+            <th>Weight (g)</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1001</td>
+            <td>Frame Base</td>
+            <td><a href="parts/frame_base.stl" download>Download</a></td>
+            <td>PLA</td>
+            <td>120</td>
+            <td>Main structural base</td>
+          </tr>
+          <tr>
+            <td>1002</td>
+            <td>Propeller</td>
+            <td><a href="parts/propeller.stl" download>Download</a></td>
+            <td>ABS</td>
+            <td>15</td>
+            <td>Standard 3-blade</td>
+          </tr>
+          <tr>
+            <td>1003</td>
+            <td>Battery Mount</td>
+            <td><a href="parts/battery_mount.stl" download>Download</a></td>
+            <td>PLA</td>
+            <td>30</td>
+            <td>Holds battery securely</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Spec Sheets</h2>
+      <div class="spec-sheet">
+        <h3>Frame Base (Part #1001)</h3>
+        <ul>
+          <li>Material: PLA</li>
+          <li>Dimensions: 200mm x 200mm x 20mm</li>
+          <li>Weight: 120g</li>
+          <li>Color: Black</li>
+          <li>Notes: Designed for lightweight drones, reinforced corners.</li>
+        </ul>
+      </div>
+      <div class="spec-sheet">
+        <h3>Propeller (Part #1002)</h3>
+        <ul>
+          <li>Material: ABS</li>
+          <li>Diameter: 120mm</li>
+          <li>Weight: 15g</li>
+          <li>Color: White</li>
+          <li>Notes: 3-blade, optimized for efficiency and low noise.</li>
+        </ul>
+      </div>
+      <div class="spec-sheet">
+        <h3>Battery Mount (Part #1003)</h3>
+        <ul>
+          <li>Material: PLA</li>
+          <li>Dimensions: 60mm x 40mm x 20mm</li>
+          <li>Weight: 30g</li>
+          <li>Color: Black</li>
+          <li>Notes: Snap-fit design, vibration dampening.</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <h2>README</h2>
+      <div class="spec-sheet">
+        <p>
+          This catalog provides downloadable STL files and documentation for key drone parts. Each part includes material, weight, and usage notes. For custom parts or support, contact the engineering team.<br><br>
+          <b>How to use:</b> Download STL files, review spec sheets, and ensure compatibility with your drone model. For assembly instructions, refer to the main documentation or contact support.
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html> 
